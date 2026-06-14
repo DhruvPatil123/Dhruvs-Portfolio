@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-brand-bg: #020008;
+  --color-brand-primary: #7c3aed;
+  --color-brand-secondary: #06b6d4;
+  --color-brand-accent: #a855f7;
+  
+  --color-card-bg: rgba(124, 58, 237, 0.08);
+  --color-card-border: rgba(124, 58, 237, 0.25);
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-typewriter-blink: typewriter-blink 1s step-end infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes typewriter-blink {
+  from, to { border-color: transparent }
+  50% { border-color: #06b6d4; }
+}
+
+/* Base resets & utilities */
+html {
+  scroll-behavior: smooth;
+  background-color: #020008;
+  color: #f1f5f9;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: rgba(124, 58, 237, 0.3);
+  color: #06b6d4;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020008;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.6);
+  border-color: #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(124, 58, 237, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.glass-nav {
+  background: rgba(2, 0, 8, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+/* Glowing text and borders */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 30%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.25);
+  border-color: rgba(124, 58, 237, 0.45);
+}
+
+.glow-violet-hover:hover {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+  border-color: rgba(124, 58, 237, 0.6);
+  transform: translateY(-4px);
+}
+
+.glow-cyan-hover:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+  border-color: rgba(6, 182, 212, 0.7);
+}
+
+/* Custom glowing elements */
+.neon-btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neon-btn-primary:hover {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.8), 0 0 10px rgba(6, 182, 212, 0.5);
+  transform: scale(1.03);
+}
+
+.neon-btn-secondary {
+  border: 1px solid rgba(6, 182, 212, 0.6);
+  background: rgba(6, 182, 212, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neon-btn-secondary:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: #06b6d4;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  transform: scale(1.03);
+}
+
+/* Responsive static background overlay when webgl canvas is hidden */
+.static-gradient-bg {
+  background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.2) 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.2) 0%, transparent 60%),
+              #020008;
+}
+
+/* ==========================================================================
+   LIGHT MODE DESIGN SYSTEM OVERRIDES
+   ========================================================================== */
+
+html.light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light ::selection {
+  background-color: rgba(124, 58, 237, 0.15);
+  color: #0891b2;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.2);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.4);
+}
+
+/* Base sections background override */
+html.light body,
+html.light section,
+html.light .bg-\[\#020008\],
+html.light .absolute.inset-0.bg-\[\#020008\] {
+  background-color: #f8fafc !important;
+}
+
+/* Glass & Card components morph to elegant light card blocks */
+html.light .glass {
+  background: #ffffff !important;
+  border-color: rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.04) !important;
+}
+
+html.light .glow-violet {
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.06) !important;
+  border-color: rgba(124, 58, 237, 0.18) !important;
+}
+
+/* Navbar specific light styling */
+html.light .glass-nav {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1) !important;
+}
+
+html.light .glass-nav a[id^="nav-link-"] {
+  color: #475569 !important;
+}
+
+html.light .glass-nav a[id^="nav-link-"]:hover {
+  color: #7c3aed !important;
+  background: rgba(124, 58, 237, 0.05) !important;
+}
+
+html.light .glass-nav a[id^="nav-link-"][class*="text-brand-secondary"] {
+  color: #7c3aed !important;
+  background: rgba(124, 58, 237, 0.08) !important;
+  border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+html.light .text-neutral-400 {
+  color: #64748b !important;
+}
+
+html.light .text-neutral-400:hover {
+  color: #7c3aed !important;
+}
+
+html.light #nav-logo span {
+  drop-shadow: none !important;
+  filter: none !important;
+}
+
+/* Headers & text */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light .text-white,
+html.light .text-white\/90,
+html.light .text-neutral-100 {
+  color: #0f172a !important;
+}
+
+html.light p,
+html.light span:not(.gradient-text):not(.text-brand-secondary):not(.text-brand-primary):not(.badge),
+html.light .text-neutral-300,
+html.light .text-neutral-400,
+html.light .text-zinc-400,
+html.light .text-neutral-400\/80 {
+  color: #334155 !important;
+}
+
+/* Keep accent colors colorful */
+html.light .text-brand-secondary {
+  color: #0891b2 !important;
+}
+
+html.light .text-brand-primary {
+  color: #6d28d9 !important;
+}
+
+/* Hero Section specifics */
+html.light #hero-subtitle {
+  color: #475569 !important;
+}
+
+html.light #hero-description {
+  color: #334155 !important;
+}
+
+/* Background gradient overlays adjusted for light mode */
+html.light .static-gradient-bg {
+  background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+              #f8fafc !important;
+}
+
+/* Specific Section Adjustments */
+/* About Section stats */
+html.light .p-4.rounded-xl.border.border-brand-primary\/25,
+html.light .p-4.rounded-xl.border.border-brand-secondary\/25 {
+  background-color: #ffffff !important;
+  border-color: rgba(124, 58, 237, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.02) !important;
+}
+
+/* Skills Section categories & pills */
+html.light div[id^="skills-category-"] {
+  background: #ffffff !important;
+  border-color: rgba(124, 58, 237, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.04) !important;
+}
+
+html.light div[id^="skills-category-"]:hover {
+  border-color: rgba(124, 58, 237, 0.35) !important;
+  box-shadow: 0 12px 36px rgba(124, 58, 237, 0.08) !important;
+}
+
+html.light div[id^="skills-category-"] div[id^="skill-badge-"] {
+  background: #f5f3ff !important;
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  color: #6d28d9 !important;
+}
+
+html.light div[id^="skills-category-"] div[id^="skill-badge-"]:hover {
+  background: #ede9fe !important;
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.2) !important;
+  color: #4c1d95 !important;
+}
+
+/* Projects cards morph */
+html.light div[id^="project-card-"] {
+  background: #ffffff !important;
+  border-color: rgba(124, 58, 237, 0.1) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light div[id^="project-card-"]:hover {
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.08) !important;
+}
+
+html.light div[id^="project-card-"] .bg-neutral-900\/60 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light div[id^="project-card-"] span.text-xs {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Education timeline list */
+html.light div[id^="education-card-"] {
+  background: #ffffff !important;
+  border-color: rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light div[id^="education-timeline-dot"] {
+  background-color: #ffffff !important;
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Contact form Inputs and box */
+html.light #contact form input,
+html.light #contact form textarea {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light #contact form input:focus,
+html.light #contact form textarea:focus {
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2) !important;
+}
+
+html.light #contact-info-card {
+  background: #ffffff !important;
+  border-color: rgba(124, 58, 237, 0.1) !important;
+}
+
+/* Footer override */
+html.light footer {
+  background: #f1f5f9 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+html.light footer p {
+  color: #64748b !important;
+}
+
+/* Mobile drawer adjustments for light mode */
+html.light .md\:hidden\.glass-nav {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.15) !important;
+}
+
+html.light .md\:hidden\.glass-nav a {
+  color: #334155 !important;
+}
+
+html.light .md\:hidden\.glass-nav a:hover {
+  background-color: rgba(124, 58, 237, 0.05) !important;
+  color: #7c3aed !important;
+}
+
