@@ -2,7 +2,8 @@
 
 An immersive, high-fidelity developer portfolio designed to showcase advanced work in machine learning, generative model engineering, agentic systems, and cloud architecture.
 
-Live Preview hosted on Cloud Run.
+Live Preview hosted on Cloud Run is below :
+https://dhruvs-portfolio-xi.vercel.app/
 
 ---
 
