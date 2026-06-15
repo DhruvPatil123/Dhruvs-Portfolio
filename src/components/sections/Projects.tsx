@@ -57,10 +57,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           transformStyle: 'preserve-3d',
         }}
         id={`project-card-${project.id}`}
-        className="relative h-full flex flex-col justify-between py-6 px-6 sm:px-7 rounded-2xl glass border border-brand-primary/20 glow-violet-hover bg-brand-primary/4 hover:bg-brand-primary/8 hover:text-white transition-all overflow-hidden"
+        className="relative h-full flex flex-col justify-between py-8 px-8 rounded-[2rem] border border-white/5 bg-[#0f0f0f] hover:border-white/20 hover:text-white transition-all overflow-hidden"
       >
         {/* Glowing visual grid overlay backing of target card */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-primary/10 via-transparent to-transparent opacity-40 pointer-events-none"></div>
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/2 via-transparent to-transparent opacity-40 pointer-events-none"></div>
 
         <div>
           {/* Badge & ID line */}
@@ -69,19 +69,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               PRJ_SYSTEM-0{project.id}
             </span>
             {project.badge && (
-              <span className="px-3 py-1 text-[10px] font-display font-semibold tracking-wide text-white bg-brand-primary shadow-[0_0_12px_rgba(124,58,237,0.8)] rounded-full border border-brand-secondary/30 animate-pulse">
+              <span className="px-3 py-1 text-[10px] font-mono tracking-wide text-white bg-white/5 rounded-full border border-white/10 animate-pulse">
                 {project.badge}
               </span>
             )}
           </div>
 
           {/* Project Title */}
-          <h3 className="font-display text-xl font-bold text-white mb-3 hover:text-brand-secondary transition-colors relative z-10">
+          <h3 className="font-display text-xl font-bold text-white mb-3 hover:text-neutral-300 transition-colors relative z-10">
             {project.title}
           </h3>
 
           {/* Project Description */}
-          <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 font-sans relative z-10 font-[400]">
+          <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 font-sans relative z-10 font-light">
             {project.description}
           </p>
 
@@ -90,7 +90,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 text-[10px] font-mono rounded bg-brand-primary/10 text-brand-secondary border border-brand-primary/15"
+                className="px-2 py-1 text-[10px] font-mono rounded-full bg-white/5 text-neutral-300 border border-white/5"
               >
                 {tag}
               </span>
@@ -99,7 +99,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Action Button Controls */}
-        <div className="relative mt-auto pt-4 border-t border-brand-primary/10 flex items-center justify-between z-10">
+        <div className="relative mt-auto pt-4 border-t border-white/5 flex items-center justify-between z-10">
           
           {/* GitHub action anchor */}
           <a
@@ -108,9 +108,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             rel="noopener noreferrer"
             id={`project-github-btn-${project.id}`}
             aria-label={`View ${project.title} code repository on github`}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-brand-primary/20 bg-brand-primary/5 text-xs text-neutral-300 hover:text-white hover:border-brand-primary hover:bg-brand-primary/15 hover:shadow-[0_0_12px_rgba(124,58,237,0.3)] transition-all cursor-pointer font-display"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-white/10 bg-white/3 text-xs text-neutral-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all cursor-pointer font-mono"
           >
-            <Github className="h-4 w-4 text-brand-secondary" />
+            <Github className="h-3.5 w-3.5 text-neutral-400" />
             <span>GitHub</span>
           </a>
 
@@ -122,9 +122,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 id={`project-live-btn-${project.id}`}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-brand-secondary/30 bg-brand-secondary/5 text-xs text-brand-secondary hover:text-white hover:border-brand-secondary hover:bg-brand-secondary/15 hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all cursor-pointer font-display"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 bg-white/5 text-xs text-white hover:border-white/40 hover:bg-white/10 transition-all cursor-pointer font-mono"
               >
-                <ExternalLink className="h-4 w-4" />
+                <ExternalLink className="h-3.5 w-3.5 text-neutral-300" />
                 <span>Live Demo</span>
               </a>
             ) : (
@@ -134,7 +134,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
                 onClick={() => setShowTooltip(!showTooltip)}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-neutral-800 bg-neutral-900/40 text-xs text-neutral-600 cursor-not-allowed font-display relative"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-neutral-900 bg-neutral-900/40 text-xs text-neutral-600 cursor-not-allowed font-mono relative"
               >
                 <HelpCircle className="h-4 w-4 opacity-70" />
                 <span>Coming Soon</span>
@@ -147,7 +147,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                       animate={{ opacity: 1, y: -40, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 rounded-md border border-brand-secondary bg-[#020008] text-[9px] font-mono text-brand-secondary uppercase tracking-wider text-center whitespace-nowrap shadow-[0_0_15px_rgba(6,182,212,0.4)] z-50 pointer-events-none"
+                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 rounded-md border border-white/10 bg-[#0f0f0f] text-[9px] font-mono text-neutral-300 uppercase tracking-widest text-center whitespace-nowrap z-50 pointer-events-none"
                     >
                       Production Build Pending
                     </motion.span>
@@ -167,23 +167,25 @@ export default function Projects() {
   return (
     <section 
       id="projects" 
-      className="relative py-24 bg-[#020008] overflow-hidden"
+      className="relative py-28 bg-[#050505] overflow-hidden border-t border-white/5"
     >
       {/* Visual neon radial background glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+        <div className="text-left mb-16 max-w-3xl">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             03 / Portfolio
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            What I&apos;ve <span className="gradient-text">Built</span>
+          <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mt-4">
+            What I&apos;ve Built
           </h2>
-          <div className="mt-2 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto"></div>
+          <p className="text-neutral-400 mt-4 text-base sm:text-lg font-light leading-relaxed">
+            Architecting intelligent consumer endpoints, conversational tools, and complex neural parsing mechanisms.
+          </p>
         </div>
 
         {/* Projects Responsive Grid (3 columns desktop, 2 columns tablet, 1 column mobile) */}

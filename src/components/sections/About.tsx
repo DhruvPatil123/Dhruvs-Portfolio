@@ -10,16 +10,24 @@ export default function About() {
   const isMobile = useIsMobile();
   const prefersReduced = usePrefersReducedMotion();
 
+  // Milestone records matching the style of reference Image 2
+  const milestones = [
+    { role: 'AI Developer Intern', company: 'EduSkills / AICTE', period: 'Jan - Mar 2026' },
+    { role: 'B.Tech AI Student', company: 'JD College of Eng.', period: '2023 - Present' },
+    { role: 'Hackathon Finalist & Winner', company: 'Smart India Hackathon', period: '2025' },
+    { role: 'Full-Stack Developer', company: 'L&T EduTech certified', period: '2026' }
+  ];
+
   return (
     <section 
       id="about" 
-      className="relative py-24 bg-[#020008] overflow-hidden"
+      className="relative py-28 bg-[#050505] overflow-hidden border-t border-white/5"
     >
       {/* Background radial effects */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-white/2 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Animated header */}
         <motion.div
@@ -27,121 +35,154 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-left mb-16"
         >
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             01 / Profile
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            About <span className="gradient-text">Myself</span>
-          </h2>
-          <div className="mt-2 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto"></div>
         </motion.div>
 
-        {/* Info Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Info Grid - Asymmetric Layout like Reference Image 2 */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Left Column: Biography */}
+          {/* Left Column: Biography ("Meet Dhruv" Style) */}
           <motion.div
             initial={prefersReduced ? {} : { opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-8"
           >
-            <div className="relative p-6 sm:p-8 rounded-2xl glass border-l-4 border-l-brand-primary glow-violet">
-              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4">
-                Dhruv Dinesh Patil — AI Engineer & LLM Developer
-              </h3>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
-                I&apos;m a 3rd year B.Tech AI student at JD College of Engineering, Nagpur with a CGPA of 8.76. 
-                I specialize in building LLM-powered products, Agentic AI systems, and real-time GenAI applications.
+            <div>
+              <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                Meet Dhruv
+              </h2>
+              <p className="text-base sm:text-lg text-neutral-400 leading-relaxed font-sans font-light">
+                I&apos;m a passionate B.Tech Artificial Intelligence researcher and Generative Model Engineer based in Nagpur. I specialize in crafting bold visual system interfaces, real-time agentic orchestrations, and high-performance language models that bridge complex mathematics with intuitive consumer experiences.
               </p>
             </div>
 
-            {/* Quick stats grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl border border-brand-primary/25 bg-brand-primary/5 flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-brand-primary/10 text-brand-primary">
-                  <Award className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-neutral-400 font-mono">Current CGPA</p>
-                  <p className="text-sm font-semibold text-white">8.76 ⭐</p>
-                </div>
-              </div>
-              <div className="p-4 rounded-xl border border-brand-secondary/25 bg-brand-secondary/5 flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-brand-secondary/10 text-brand-secondary">
-                  <Star className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-neutral-400 font-mono">Generative AI</p>
-                  <p className="text-sm font-semibold text-white">Agentic Focus</p>
-                </div>
+            {/* Quick Skills Tags row matching Image 2 */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              {['Generative AI', 'Agentic Workflows', 'Deep Learning', 'Flask Mastery', 'UI/UX Design', 'Model Alignment'].map((skill) => (
+                <span key={skill} className="px-3 py-1 text-xs font-mono text-neutral-300 border border-white/10 rounded-full bg-white/3">
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Sleek Milestones List Table matching Image 2 tabular style */}
+            <div className="pt-6 border-t border-white/5 space-y-4">
+              <h4 className="font-mono text-xs uppercase tracking-widest text-[#a1a1aa] mb-4">
+                Core Timeline & Placements
+              </h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-sans text-sm text-neutral-400">
+                  <thead>
+                    <tr className="border-b border-white/5 text-[11px] font-mono uppercase tracking-wider text-neutral-500">
+                      <th className="pb-3 font-normal">Role / Milestone</th>
+                      <th className="pb-3 font-normal">Organization</th>
+                      <th className="pb-3 font-normal text-right">Timeline</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/2">
+                    {milestones.map((item, idx) => (
+                      <tr key={idx} className="hover:bg-white/1 transition-colors group">
+                        <td className="py-3.5 pr-4 font-semibold text-white group-hover:text-white transition-colors">
+                          {item.role}
+                        </td>
+                        <td className="py-3.5 text-neutral-400 group-hover:text-neutral-200 transition-colors">
+                          {item.company}
+                        </td>
+                        <td className="py-3.5 text-right text-xs font-mono text-neutral-500 group-hover:text-neutral-300 transition-colors">
+                          {item.period}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
 
             {/* Connection pills below bio */}
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-3 pt-4">
               <a 
                 href={socials.email}
                 id="about-link-email"
-                className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg border border-brand-primary/20 bg-brand-primary/5 hover:border-brand-primary hover:bg-brand-primary/15 hover:shadow-[0_0_15px_rgba(124,58,237,0.3)] text-xs sm:text-sm text-neutral-300 transition-all duration-300 cursor-pointer"
+                className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/3 hover:border-white/35 text-xs text-neutral-300 transition-all duration-300 cursor-pointer"
               >
-                <Mail className="h-4 w-4 text-brand-secondary" />
+                <Mail className="h-3.5 w-3.5 text-neutral-400" />
                 <span>sujalpatil8657231278@gmail.com</span>
               </a>
               <a 
                 href={socials.phone}
                 id="about-link-phone"
-                className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg border border-brand-secondary/20 bg-brand-secondary/5 hover:border-brand-secondary hover:bg-brand-secondary/15 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] text-xs sm:text-sm text-neutral-300 transition-all duration-300 cursor-pointer"
+                className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/3 hover:border-white/35 text-xs text-neutral-300 transition-all duration-300 cursor-pointer"
               >
-                <Phone className="h-4 w-4 text-[#06b6d4]" />
+                <Phone className="h-3.5 w-3.5 text-neutral-400" />
                 <span>+91 8857841863</span>
               </a>
-              <div 
-                id="about-location-pill"
-                className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg border border-neutral-800 bg-neutral-900/20 text-xs sm:text-sm text-neutral-400"
-              >
-                <MapPin className="h-4 w-4 text-brand-secondary" />
-                <span>Nagpur, Maharashtra, India</span>
-              </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Interactive Torus Knot or clean alternate placeholder for mobile */}
+          {/* Right Column: Beautiful Framed Grayscale Technical Image Panel block matching Reference Image 2 */}
           <motion.div
             initial={prefersReduced ? {} : { opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center"
+            className="lg:col-span-5 flex flex-col items-center justify-center w-full"
           >
-            <div className="relative w-full max-w-sm rounded-2xl border border-brand-primary/25 bg-brand-primary/5 shadow-[0_0_20px_rgba(124,58,237,0.1)] overflow-hidden">
-              {isMobile ? (
-                // Beautiful fluid high-performance static fallback vector card for mobile devices
-                <div className="w-full h-72 py-12 px-8 flex flex-col justify-center items-center text-center bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10">
-                  <div className="absolute top-4 right-4 text-neutral-400 font-mono text-[10px]">
-                    WEBGL DEACTIVATED
-                  </div>
-                  <div className="h-16 w-16 rounded-full border border-brand-primary/40 flex items-center justify-center bg-brand-primary/5 animate-pulse mb-4">
-                    <BookOpen className="h-8 w-8 text-brand-secondary" />
-                  </div>
-                  <span className="font-display text-lg font-bold text-white mb-2">Deep Tech Student</span>
-                  <p className="text-xs text-neutral-400 max-w-xs leading-relaxed font-sans">
-                    Fusing neural processing architectures with real-time UI nodes to bridge the gap between heavy models and consumer browsers.
-                  </p>
+            {/* Framed Graphic Visual */}
+            <div className="relative w-full aspect-[4/5] rounded-[2.5rem] border border-white/10 bg-[#0f0f0f] shadow-2xl overflow-hidden p-3 group transition-transform duration-500 hover:scale-[1.01]">
+              <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_40%,rgba(0,0,0,0.8)_100%] z-10 pointer-events-none" />
+              
+              {/* Grayscale modern placeholder aesthetic fitting photo block */}
+              <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-[#161616] flex flex-col justify-between p-8 group-hover:bg-[#1a1a1a] transition-all duration-500 border border-white/5">
+                <div className="flex items-center justify-between z-20">
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest">
+                    AI LABS // 2026
+                  </span>
+                  <div className="h-2 w-2 rounded-full bg-neutral-400 animate-pulse" />
                 </div>
-              ) : (
-                <Suspense fallback={
-                  <div className="w-full h-72 md:h-96 flex items-center justify-center bg-neutral-950/20">
-                    <div className="animate-spin h-8 w-8 border-t-2 border-brand-secondary rounded-full"></div>
+
+                <div className="my-auto space-y-3 z-20">
+                  {/* Styled generative nodes art block resembling workspace */}
+                  <svg viewBox="0 0 100 60" className="w-full text-neutral-600 h-28 opacity-40">
+                    <path d="M10 30 Q30 10, 50 30 T90 30" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
+                    <circle cx="10" cy="30" r="3" fill="currentColor" />
+                    <circle cx="50" cy="30" r="4" fill="currentColor" />
+                    <circle cx="90" cy="30" r="3" fill="currentColor" />
+                    <line x1="50" y1="30" x2="50" y2="10" stroke="currentColor" strokeWidth="1" />
+                    <circle cx="50" cy="10" r="2" fill="currentColor" />
+                  </svg>
+                  <div className="space-y-1 text-center">
+                    <span className="font-display text-lg font-bold text-white tracking-wide block">
+                      Dhruv Dinesh Patil
+                    </span>
+                    <span className="text-[11px] font-mono text-neutral-400 block tracking-wider uppercase">
+                      B.Tech AI Engineer & Builder
+                    </span>
                   </div>
-                }>
+                </div>
+
+                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500 z-20 pt-4 border-t border-white/5">
+                  <span>Nagpur, IN</span>
+                  <span className="text-white bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                    CGPA 8.76
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Fallback Mesh embedded dynamically underneath on non-mobiles for gorgeous depth */}
+            {!isMobile && (
+              <div className="w-full h-24 mt-6 rounded-2xl border border-white/5 bg-white/1 overflow-hidden opacity-40 relative">
+                <Suspense fallback={null}>
                   <AboutMesh />
                 </Suspense>
-              )}
-            </div>
+              </div>
+            )}
           </motion.div>
 
         </div>

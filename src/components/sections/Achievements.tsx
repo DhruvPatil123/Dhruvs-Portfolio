@@ -17,41 +17,41 @@ interface AchievementStat {
 const statsData: AchievementStat[] = [
   {
     id: 'leetcode',
-    label: 'LeetCode Problems',
-    targetValue: 850,
-    suffix: '+',
-    highlightText: 'Top 5% Coding Contest Ranking',
-    description: 'Expert algorithms & data structures practice solved across LeetCode, CodeChef, and HackerRank.',
-    accentClass: 'from-amber-500 to-yellow-400',
+    label: 'LeetCode World Rank',
+    targetValue: 1686729,
+    suffix: '',
+    highlightText: 'Global Profile Standing',
+    description: 'Consistently optimizing analytical proficiency by tackling complex algorithmic and structural problems.',
+    accentClass: 'from-amber-400 to-yellow-500',
     icon: Code2
   },
   {
     id: 'hackathons',
-    label: 'Hackathons Sprint',
-    targetValue: 3,
+    label: 'Hackathons Championed',
+    targetValue: 1,
     suffix: '',
-    highlightText: 'SIH Finalist & Campus Winner',
-    description: 'Pioneered multimodal proctoring and real-time LLM agents in competitive, time-critical 36hr hackathons.',
+    highlightText: 'SIH Finalist & Builder',
+    description: 'Pioneered custom multimodal proctoring schemas and live streaming integrations under time-constrained sprint events.',
     accentClass: 'from-violet-600 to-fuchsia-500',
     icon: Trophy
   },
   {
     id: 'github',
     label: 'GitHub Contributions',
-    targetValue: 1200,
+    targetValue: 10,
     suffix: '+',
-    highlightText: 'Active Open Source Dev',
-    description: 'Maintained AI agent libraries, UI frameworks (UnoUI), secure crypto packages, and system templates.',
+    highlightText: 'Open Source Committer',
+    description: 'Maintaining robust codebase templates, encryption utilities, interactive canvases, and portfolio modules.',
     accentClass: 'from-emerald-500 to-teal-400',
     icon: GitMerge
   },
   {
     id: 'deployed',
-    label: 'Production Deployed',
-    targetValue: 12,
-    suffix: '+',
-    highlightText: 'Full-Stack Agentic Webapps',
-    description: 'Ranging from global interview proctoring systems to high-fidelity diffusion canvases and NLP consoles.',
+    label: 'Projects Deployed',
+    targetValue: 6,
+    suffix: '',
+    highlightText: 'Active Hosted Builds',
+    description: 'Successfully hosting fully responsive full-stack applications, intelligent codebases, and custom neural suites.',
     accentClass: 'from-[#06b6d4] to-blue-500',
     icon: Rocket
   }
@@ -73,7 +73,6 @@ function CounterCard({ stat, delayMultiplier }: { stat: AchievementStat; delayMu
 
     let start = 0;
     const end = stat.targetValue;
-    // Set duration proportionate to target but capped for standard responsive loading
     const totalDuration = 1800; // milliseconds
     const frameRate = 1000 / 60; // 60fps
     const totalFrames = Math.round(totalDuration / frameRate);
@@ -81,7 +80,6 @@ function CounterCard({ stat, delayMultiplier }: { stat: AchievementStat; delayMu
 
     const counterTimer = setInterval(() => {
       frame++;
-      // Easing out quadratic function for smooth final count decelerating
       const progress = frame / totalFrames;
       const easeOutQuad = progress * (2 - progress);
       const currentNumber = Math.round(easeOutQuad * end);
@@ -106,20 +104,17 @@ function CounterCard({ stat, delayMultiplier }: { stat: AchievementStat; delayMu
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, ease: 'easeOut', delay: delayMultiplier * 0.15 }}
-      className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl glass border border-brand-primary/10 bg-brand-primary/4 hover:border-brand-secondary/40 hover:shadow-[0_0_35px_rgba(139,92,246,0.15)] transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col justify-between p-8 rounded-[2rem] border border-white/5 bg-[#0f0f0f] hover:border-white/20 hover:shadow-[0_0_45px_rgba(255,255,255,0.02)] transition-all duration-300 overflow-hidden"
     >
-      {/* Background soft color splash on hover */}
-      <div className={`absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-tr ${stat.accentClass} opacity-0 group-hover:opacity-[0.06] rounded-full blur-2xl pointer-events-none transition-all duration-500`} />
-
       <div>
         {/* Card Header & Icon */}
         <div className="flex items-center justify-between gap-4 mb-6">
-          <div className={`p-3 rounded-xl bg-gradient-to-tr ${stat.accentClass} bg-opacity-10 text-white shadow-lg`}>
-            <IconComponent className="h-6 w-6 text-white group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
+          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/5 text-white">
+            <IconComponent className="h-5 w-5 text-neutral-200 group-hover:scale-105 transition-transform duration-300" />
           </div>
           
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
-            <span className={`w-2 h-2 rounded-full bg-gradient-to-tr ${stat.accentClass} animate-pulse`} />
+          <div className="flex items-center gap-1.5 px-3 py-1 bg-white/3 border border-white/5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             <span className="text-[10px] uppercase font-mono text-neutral-400 tracking-wider">
               {stat.id}
             </span>
@@ -131,16 +126,16 @@ function CounterCard({ stat, delayMultiplier }: { stat: AchievementStat; delayMu
           <h3 className="font-display text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-none">
             {currentVal.toLocaleString()}{stat.suffix}
           </h3>
-          <span className="text-brand-secondary font-mono text-lg font-bold select-none">&gt;</span>
+          <span className="text-white/40 font-mono text-base font-bold select-none">&gt;</span>
         </div>
 
         {/* Highlight Label */}
-        <p className="font-mono text-xs font-bold text-neutral-200 uppercase tracking-widest mb-4">
+        <p className="font-mono text-xs font-bold text-neutral-300 uppercase tracking-widest mb-4">
           {stat.label}
         </p>
 
         {/* Explanatory description */}
-        <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-5 font-[400]">
+        <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-5 font-light">
           {stat.description}
         </p>
       </div>
@@ -151,9 +146,8 @@ function CounterCard({ stat, delayMultiplier }: { stat: AchievementStat; delayMu
           <Terminal className="h-3.5 w-3.5 text-neutral-600" />
           SYSTEM_STAT_OK
         </span>
-        <span className="text-[#06b6d4] font-semibold flex items-center gap-1">
-          <Zap className="h-3.5 w-3.5 animate-bounce" style={{ animationDuration: '2.5s' }} />
-          {stat.highlightText}
+        <span className="text-white/80 font-semibold flex items-center gap-1">
+          ✦ {stat.highlightText}
         </span>
       </div>
     </motion.div>
@@ -166,69 +160,53 @@ export default function Achievements() {
   return (
     <section 
       id="achievements" 
-      className="relative py-24 bg-[#020008] overflow-hidden border-t border-violet-500/10"
+      className="relative py-28 bg-[#050505] overflow-hidden border-t border-white/5"
     >
       {/* Background network grids */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808003_1px,transparent_1px),linear-gradient(to_bottom,#80808003_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none opacity-20"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none opacity-20"></div>
 
-      {/* Cyber glows */}
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-brand-primary/4 rounded-full blur-3xl pointer-events-none z-0"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-secondary/4 rounded-full blur-3xl pointer-events-none z-0"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
-        {/* Header Block */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+        {/* Header Block resembling Client Reviews block of Image 4 */}
+        <div className="text-left mb-16 max-w-3xl">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             04 / Benchmarks
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            Rankings & <span className="gradient-text">Achievements</span>
+          <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mt-4">
+            Rankings & Achievements
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto mt-4 text-sm sm:text-base leading-relaxed font-sans font-[400]">
+          <p className="text-neutral-400 mt-4 text-base sm:text-lg font-light leading-relaxed">
             Proving analytical capabilities, technical consistency, and deployment scale through tracked open-source work and competitive code statistics.
           </p>
-          <div className="mt-4 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto" />
         </div>
 
         {/* Counter Panel Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {statsData.map((stat, idx) => (
             <CounterCard key={stat.id} stat={stat} delayMultiplier={idx} />
           ))}
         </div>
 
-        {/* Bottom Banner info */}
+        {/* Bottom Banner Stats Horizontal Block imitating Image 4 metrics footers */}
         <motion.div
           initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-12 p-4 rounded-xl border border-white/5 bg-white/2 max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="pt-10 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
         >
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-yellow-500/10 text-yellow-500 hidden sm:block">
-              <Award className="h-5 w-5 animate-pulse" />
-            </div>
-            <div>
-              <h4 className="text-white text-xs sm:text-sm font-bold tracking-wide font-display">
-                Competitive Coding Profile Verified
-              </h4>
-              <p className="text-[11px] sm:text-xs text-neutral-400 font-sans">
-                My LeetCode submissions are benchmarked under optimized space complexity constraints.
-              </p>
-            </div>
+          <div className="space-y-1">
+            <h5 className="font-display text-3xl font-extrabold text-white">850+</h5>
+            <p className="text-xs text-neutral-400 font-sans tracking-wide">LeetCode Algorithms Solved</p>
           </div>
-          
-          <a
-            href="https://linkedin.com/in/dhruv-dinesh-patil"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 text-[11px] text-white font-mono font-bold hover:text-brand-secondary transition-colors duration-200 bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-white/10"
-            id="achievements-profile-verify-button"
-          >
-            View GitHub Commits
-          </a>
+          <div className="space-y-1 border-y md:border-y-0 md:border-x border-white/5 py-4 md:py-0 md:px-8">
+            <h5 className="font-display text-3xl font-extrabold text-white">Top 1%</h5>
+            <p className="text-xs text-neutral-400 font-sans tracking-wide">SIH Virtual Proctoring Finalists</p>
+          </div>
+          <div className="space-y-1 md:pl-8">
+            <h5 className="font-display text-3xl font-extrabold text-white">Grade O</h5>
+            <p className="text-xs text-neutral-400 font-sans tracking-wide">Outstanding Core UI & Prototyping virtual interns</p>
+          </div>
         </motion.div>
 
       </div>

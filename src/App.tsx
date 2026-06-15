@@ -14,15 +14,15 @@ import FloatingChat from './components/sections/FloatingChat';
 
 export default function App() {
   return (
-    <div className="bg-[#020008] min-h-screen text-[#f1f5f9] select-none relative selection:bg-brand-primary/20 selection:text-brand-secondary transition-colors duration-300">
+    <div className="bg-[#050505] min-h-screen text-[#f3f4f6] select-none relative selection:bg-white/10 selection:text-white transition-colors duration-300">
       {/* Dynamic customizable interaction visualizer trailing pointer */}
       <CustomCursor />
 
       {/* Background radial overlays */}
-      <div className="absolute inset-0 bg-[#020008] -z-20"></div>
+      <div className="absolute inset-0 bg-[#050505] -z-20"></div>
       
       {/* Dynamic Background Grid Mesh */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none -z-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none -z-10"></div>
 
       {/* Top persistent navigation bar */}
       <Navbar />

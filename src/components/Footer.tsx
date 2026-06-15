@@ -11,19 +11,17 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#020008] pt-12 pb-24 md:pb-8 overflow-hidden">
-      {/* Dynamic colorful blur backing */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-[#7c3aed] to-[#06b6d4] opacity-70"></div>
+    <footer className="relative bg-[#050505] pt-12 pb-24 md:pb-8 overflow-hidden border-t border-white/5">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col items-center">
         {/* Scroll back up button */}
         <button
           onClick={scrollToTop}
           id="footer-scroll-top"
-          className="mb-8 p-3 rounded-full border border-brand-primary/30 bg-brand-primary/5 hover:border-brand-secondary hover:bg-brand-secondary/15 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer"
+          className="mb-8 p-3.5 rounded-full border border-white/10 bg-white/5 hover:border-white/25 transition-all duration-300 group cursor-pointer"
           aria-label="Scroll to top"
         >
-          <ArrowUp className="h-5 w-5 text-neutral-300 group-hover:text-brand-secondary group-hover:-translate-y-0.5 transition-transform" />
+          <ArrowUp className="h-4 w-4 text-neutral-300 group-hover:text-white group-hover:-translate-y-0.5 transition-transform" />
         </button>
 
         {/* Brand name */}
@@ -34,46 +32,46 @@ export default function Footer() {
         </p>
 
         {/* Social interactions */}
-        <div className="flex space-x-6 mb-8">
+        <div className="flex space-x-4 mb-8">
           <a
             href={socials.github}
             target="_blank"
             rel="noopener noreferrer"
             id="footer-social-github"
-            className="p-2 rounded-lg border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-brand-primary hover:border-brand-primary/50 hover:shadow-[0_0_12px_rgba(124,58,237,0.4)] transition-all duration-200"
+            className="p-3 rounded-2xl border border-white/5 bg-[#121212]/40 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-200"
             aria-label="GitHub Profile"
           >
-            <Github className="h-5 w-5" />
+            <Github className="h-4 w-4" />
           </a>
           <a
             href={socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             id="footer-social-linkedin"
-            className="p-2 rounded-lg border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-brand-secondary hover:border-brand-secondary/50 hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all duration-200"
+            className="p-3 rounded-2xl border border-white/5 bg-[#121212]/40 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-200"
             aria-label="LinkedIn Profile"
           >
-            <Linkedin className="h-5 w-5" />
+            <Linkedin className="h-4 w-4" />
           </a>
           <a
             href={socials.instagram}
             target="_blank"
             rel="noopener noreferrer"
             id="footer-social-instagram"
-            className="p-2 rounded-lg border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-brand-primary hover:border-brand-primary/50 hover:shadow-[0_0_12px_rgba(124,58,237,0.4)] transition-all duration-200"
+            className="p-3 rounded-2xl border border-white/5 bg-[#121212]/40 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-200"
             aria-label="Instagram Profile"
           >
-            <Instagram className="h-5 w-5" />
+            <Instagram className="h-4 w-4" />
           </a>
           <a
             href={socials.leetcode}
             target="_blank"
             rel="noopener noreferrer"
             id="footer-social-leetcode"
-            className="p-2 rounded-lg border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-brand-secondary hover:border-brand-secondary/50 hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all duration-200"
+            className="p-3 rounded-2xl border border-white/5 bg-[#121212]/40 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-200"
             aria-label="LeetCode Profile"
           >
-            <Code2 className="h-5 w-5" />
+            <Code2 className="h-4 w-4" />
           </a>
         </div>
 

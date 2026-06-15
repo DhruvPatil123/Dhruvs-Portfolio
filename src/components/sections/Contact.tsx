@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section 
       id="contact" 
-      className="relative py-24 bg-[#020008] overflow-hidden flex items-center min-h-screen"
+      className="relative py-28 bg-[#050505] overflow-hidden flex items-center min-h-screen border-t border-white/5"
     >
       {/* 3D background rotating orb or high-performance CSS gradient fallback on mobile */}
       {isMobile ? (
@@ -64,20 +64,22 @@ export default function Contact() {
       )}
 
       {/* Auxiliary colorful background elements */}
-      <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 w-full">
         
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+        <div className="text-left mb-16 max-w-3xl">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             05 / Connect
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            Let&apos;s Build <span className="gradient-text">Something</span>
+          <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mt-4">
+            Let&apos;s Build Something
           </h2>
-          <div className="mt-2 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto"></div>
+          <p className="text-neutral-400 mt-4 text-base sm:text-lg font-light leading-relaxed">
+            Interested in starting a project, validating neural topologies, or collaborating on conversational interfaces? Get in touch!
+          </p>
         </div>
 
         {/* Form & Connection split grid */}
@@ -91,9 +93,9 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="lg:col-span-7"
           >
-            <div className="h-full rounded-2xl glass border border-brand-primary/20 p-6 sm:p-8 bg-[#020008c2] backdrop-blur-md glow-violet">
+            <div className="h-full rounded-[2rem] border border-white/5 p-6 sm:p-8 bg-[#0a0a0ab8] backdrop-blur-md">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2.5 rounded-lg bg-brand-primary/10 border border-brand-primary/20 text-brand-secondary">
+                <div className="p-3 rounded-2xl bg-white/5 border border-white/5 text-white">
                   <MessageSquare className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-white tracking-wide">
@@ -115,7 +117,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Dhruv Patil"
-                      className="w-full px-4 py-3.5 rounded-xl border border-neutral-800 bg-neutral-900/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl border border-white/5 bg-[#121212]/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -130,7 +132,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="client@net.com"
-                      className="w-full px-4 py-3.5 rounded-xl border border-neutral-800 bg-neutral-900/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl border border-white/5 bg-[#121212]/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-all"
                     />
                   </div>
                 </div>
@@ -146,7 +148,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="AI System Development Collaboration"
-                    className="w-full px-4 py-3.5 rounded-xl border border-neutral-800 bg-neutral-900/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/5 bg-[#121212]/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-all"
                   />
                 </div>
 
@@ -162,7 +164,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Enter details of your project context..."
-                    className="w-full px-4 py-3.5 rounded-xl border border-neutral-800 bg-neutral-900/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all resize-none"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/5 bg-[#121212]/40 text-sm font-sans tracking-wide text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-all resize-none"
                   />
                 </div>
 
@@ -170,13 +172,13 @@ export default function Contact() {
                   type="submit"
                   disabled={isSubmitting}
                   id="contact-submit-btn"
-                  className="w-full neon-btn-primary py-3.5 rounded-xl font-display font-semibold tracking-widest text-white flex items-center justify-center gap-2.5 hover:scale-101 border-none cursor-pointer text-sm"
+                  className="w-full select-none font-mono py-3.5 rounded-full font-bold tracking-widest text-[#050505] bg-white hover:bg-neutral-200 flex items-center justify-center gap-2.5 cursor-pointer text-sm transition-colors duration-300"
                 >
                   {isSubmitting ? (
-                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-b-transparent"></div>
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-900 border-b-transparent"></div>
                   ) : (
                     <>
-                      <Send className="h-4 w-4 text-brand-secondary" />
+                      <Send className="h-3.5 w-3.5" />
                       <span>INITIALIZE TRANSMISSION</span>
                     </>
                   )}
@@ -194,7 +196,7 @@ export default function Contact() {
             className="lg:col-span-5 flex flex-col justify-between space-y-6"
           >
             {/* Context contact parameters card */}
-            <div id="contact-info-card" className="rounded-2xl glass border border-brand-primary/20 p-6 sm:p-8 bg-[#020008c2] backdrop-blur-md space-y-6 flex-1">
+            <div id="contact-info-card" className="rounded-[2.5rem] border border-white/5 p-6 sm:p-8 bg-[#0a0a0ab8] backdrop-blur-md space-y-6 flex-1">
               <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2 tracking-wide uppercase">
                 Contact Parameters
               </h3>
@@ -207,14 +209,14 @@ export default function Contact() {
                 <a 
                   href={socials.email}
                   id="contact-side-email"
-                  className="flex items-center gap-4 p-3 rounded-lg border border-transparent hover:border-brand-primary/20 hover:bg-brand-primary/4 transition-colors group cursor-pointer"
+                  className="flex items-center gap-4 p-3 rounded-2xl border border-transparent hover:border-white/10 hover:bg-white/3 transition-colors group cursor-pointer"
                 >
-                  <div className="p-3 rounded-xl border border-brand-primary/25 bg-brand-primary/10 text-brand-secondary">
+                  <div className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-white">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">EMAIL ADDRESS</p>
-                    <p className="text-sm font-semibold text-neutral-200 group-hover:text-brand-secondary transition-colors font-sans font-medium">
+                    <p className="text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors font-sans font-medium">
                       sujalpatil8657231278@gmail.com
                     </p>
                   </div>
@@ -224,14 +226,14 @@ export default function Contact() {
                 <a 
                   href={socials.phone}
                   id="contact-side-phone"
-                  className="flex items-center gap-4 p-3 rounded-lg border border-transparent hover:border-brand-secondary/20 hover:bg-brand-secondary/4 transition-colors group cursor-pointer"
+                  className="flex items-center gap-4 p-3 rounded-2xl border border-transparent hover:border-white/10 hover:bg-white/3 transition-colors group cursor-pointer"
                 >
-                  <div className="p-3 rounded-xl border border-brand-secondary/25 bg-brand-secondary/10 text-[#06b6d4]">
+                  <div className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-white">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">TELEPHONE</p>
-                    <p className="text-sm font-semibold text-neutral-200 group-hover:text-brand-secondary transition-colors font-sans font-medium">
+                    <p className="text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors font-sans font-medium">
                       +91 8857841863
                     </p>
                   </div>
@@ -240,9 +242,9 @@ export default function Contact() {
                 {/* Location line */}
                 <div 
                   id="contact-side-location"
-                  className="flex items-center gap-4 p-3 rounded-lg"
+                  className="flex items-center gap-4 p-3 rounded-2xl"
                 >
-                  <div className="p-3 rounded-xl border border-neutral-800 bg-[#02000854] text-brand-primary">
+                  <div className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-white">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -256,7 +258,7 @@ export default function Contact() {
             </div>
 
             {/* Quick Large Social connections card */}
-            <div className="rounded-2xl glass border border-brand-primary/20 p-6 sm:p-7 bg-[#020008c2] backdrop-blur-md">
+            <div className="rounded-[2rem] border border-white/5 p-6 sm:p-7 bg-[#0a0a0ab8] backdrop-blur-md">
               <h4 className="font-display text-sm font-bold text-neutral-300 uppercase tracking-widest mb-4">
                 Public Registries
               </h4>
@@ -266,7 +268,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="contact-btn-social-github"
-                  className="p-3 rounded-xl border border-neutral-800 bg-[#02000870] text-neutral-400 hover:text-white hover:border-brand-primary hover:shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-300 flex items-center justify-center cursor-pointer"
                   aria-label="GitHub profile link"
                 >
                   <Github className="h-5 w-5" />
@@ -276,7 +278,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="contact-btn-social-linkedin"
-                  className="p-3 rounded-xl border border-neutral-800 bg-[#02000870] text-neutral-400 hover:text-white hover:border-brand-secondary hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-300 flex items-center justify-center cursor-pointer"
                   aria-label="LinkedIn profile link"
                 >
                   <Linkedin className="h-5 w-5" />
@@ -286,7 +288,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="contact-btn-social-instagram"
-                  className="p-3 rounded-xl border border-neutral-800 bg-[#02000870] text-neutral-400 hover:text-white hover:border-brand-primary hover:shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-300 flex items-center justify-center cursor-pointer"
                   aria-label="Instagram profile link"
                 >
                   <Instagram className="h-5 w-5" />
@@ -296,7 +298,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="contact-btn-social-leetcode"
-                  className="p-3 rounded-xl border border-neutral-800 bg-[#02000870] text-neutral-400 hover:text-white hover:border-brand-secondary hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  className="p-3.5 rounded-2xl border border-white/5 bg-white/5 text-neutral-400 hover:text-white hover:border-white/20 transition-all duration-300 flex items-center justify-center cursor-pointer"
                   aria-label="LeetCode profile link"
                 >
                   <Code2 className="h-5 w-5" />
@@ -318,9 +320,9 @@ export default function Contact() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
             id="glowing-success-toast"
-            className="fixed bottom-6 right-6 z-50 p-4 rounded-xl border border-[#06b6d4] bg-[#020008ea] backdrop-blur-md shadow-[0_0_30px_rgba(6,182,212,0.4)] flex items-center gap-3.5 max-w-sm"
+            className="fixed bottom-6 right-6 z-50 p-4 rounded-xl border border-white/10 bg-[#0a0a0aea] backdrop-blur-md shadow-2xl flex items-center gap-3.5 max-w-sm"
           >
-            <div className="h-8 w-8 rounded-full bg-brand-secondary/20 flex items-center justify-center border border-brand-secondary text-brand-secondary flex-shrink-0 animate-bounce">
+            <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center border border-white/25 text-white flex-shrink-0">
               <Check className="h-4 w-4" />
             </div>
             

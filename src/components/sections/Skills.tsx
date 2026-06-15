@@ -8,64 +8,47 @@ import { usePrefersReducedMotion } from '../../utils';
 const getCategoryIcon = (categoryName: string) => {
   switch (categoryName) {
     case 'AI/ML Core':
-      return <Cpu className="h-5 w-5 text-brand-secondary" />;
+      return <Cpu className="h-5 w-5 text-white" />;
     case 'Web & Backend':
-      return <Server className="h-5 w-5 text-[#06b6d4]" />;
+      return <Server className="h-5 w-5 text-white" />;
     case 'Systems & Security':
-      return <Shield className="h-5 w-5 text-brand-primary" />;
+      return <Shield className="h-5 w-5 text-white" />;
     default:
-      return <Wrench className="h-5 w-5 text-[#a855f7]" />;
+      return <Wrench className="h-5 w-5 text-white" />;
   }
 };
 
 export default function Skills() {
   const prefersReduced = usePrefersReducedMotion();
 
-  // Variants for staggered entrance animation of categories
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const }
-    }
-  };
-
   return (
     <section 
       id="skills" 
-      className="relative py-24 bg-[#020008] overflow-hidden"
+      className="relative py-28 bg-[#050505] overflow-hidden border-t border-white/5"
     >
       {/* Visual neon grid mesh backdrop */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#020008_1px,transparent_1px),linear-gradient(to_bottom,#020008_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-25"></div>
       
       {/* Blurred background dots */}
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 right-0 w-80 h-80 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+        {/* Section Header resembles Services Image 3 */}
+        <div className="text-left mb-16 max-w-3xl">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             02 / Capabilities
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            Tech <span className="gradient-text">Arsenal</span>
+          <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mt-4">
+            Tech Arsenal
           </h2>
-          <div className="mt-2 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto"></div>
+          <p className="text-neutral-400 mt-4 text-base sm:text-lg font-light leading-relaxed">
+            Fusing model training configurations, data embeddings, and cloud interfaces to establish reliable, agentic artificial pipelines.
+          </p>
         </div>
 
-        {/* Categories Stagger Grid */}
+        {/* Categories Stagger Grid resembling Card block pattern from Image 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((cat, catIdx) => {
             const cleanId = `skills-category-${cat.category.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
@@ -77,33 +60,33 @@ export default function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: catIdx * 0.12 }}
                 id={cleanId}
-                className="rounded-2xl border border-violet-500/20 bg-brand-primary/5 p-6 md:p-8 hover:border-violet-500/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-300 group flex flex-col justify-between"
+                className="rounded-[2rem] border border-white/5 bg-white/2 p-6 md:p-8 hover:border-white/20 hover:shadow-[0_0_45px_rgba(255,255,255,0.02)] transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   {/* Category Title & Icon Wrapper */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="p-2.5 rounded-xl border border-violet-500/30 bg-violet-950/20 shadow-[0_0_15px_rgba(139,92,246,0.2)] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300">
+                    <div className="p-3 rounded-2xl border border-white/10 bg-white/5 group-hover:scale-102 transition-all duration-300">
                       {getCategoryIcon(cat.category)}
                     </div>
                     <div className="flex flex-col">
-                      <h3 className="font-display text-lg sm:text-xl font-bold text-white tracking-wide uppercase drop-shadow-[0_0_8px_rgba(139,92,246,0.5)] group-hover:text-violet-300 transition-colors duration-300">
+                      <h3 className="font-display text-lg sm:text-xl font-bold text-white tracking-wide uppercase group-hover:text-neutral-200 transition-colors duration-300">
                         {cat.category}
                       </h3>
-                      <span className="text-[10px] font-mono text-violet-400/80 tracking-widest uppercase mt-0.5 font-bold animate-pulse">
-                        Core Capability
+                      <span className="text-[10px] font-mono text-neutral-500 tracking-widest uppercase mt-0.5 font-bold">
+                        Core Stream
                       </span>
                     </div>
                   </div>
 
                   {/* Skills badge container */}
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill, skillIdx) => {
                       const skillUniqueId = `skill-pill-${catIdx}-${skillIdx}`;
                       return (
                         <div
                           key={skill}
                           id={skillUniqueId}
-                          className="px-3.5 py-1.5 rounded-lg border border-violet-500/30 bg-violet-950/10 text-neutral-300 text-xs sm:text-sm font-sans tracking-wide hover:text-white hover:border-violet-500 hover:bg-violet-950/20 hover:shadow-[0_0_15px_rgba(139,92,246,0.6)] hover:-translate-y-0.5 transition-all duration-300 uppercase cursor-default select-none"
+                          className="px-3.5 py-1.5 rounded-full border border-white/10 bg-white/3 text-neutral-300 text-xs font-mono tracking-wide hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 uppercase cursor-default select-none"
                         >
                           {skill}
                         </div>

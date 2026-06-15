@@ -10,29 +10,31 @@ export default function Education() {
   return (
     <section 
       id="education" 
-      className="relative py-24 bg-[#020008] overflow-hidden"
+      className="relative py-28 bg-[#050505] overflow-hidden border-t border-white/5"
     >
       {/* Background visual cues */}
-      <div className="absolute top-1/3 left-0 w-80 h-80 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute top-2/3 right-0 w-80 h-80 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/3 left-0 w-80 h-80 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-2/3 right-0 w-80 h-80 bg-white/2 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+        <div className="text-left mb-16 max-w-3xl">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             04 / Resume
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            Academic <span className="gradient-text">Journey</span>
+          <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mt-4">
+            Academic Journey
           </h2>
-          <div className="mt-2 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto"></div>
+          <p className="text-neutral-400 mt-4 text-base sm:text-lg font-light leading-relaxed select-text">
+            Tracing foundations from pure computer science principles, mathematical frameworks, and advanced system designs.
+          </p>
         </div>
 
         {/* Vertical Timeline Container */}
         <div className="relative mt-12 max-w-4xl mx-auto">
-          {/* Central neon glowing spine track line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-[1px] bg-gradient-to-b from-brand-primary via-[#06b6d4] to-brand-primary opacity-60"></div>
+          {/* Central subtle track line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-[1px] bg-white/10 opacity-60"></div>
 
           {/* Timeline Items */}
           <div className="space-y-12">
@@ -52,14 +54,14 @@ export default function Education() {
                     isEven ? 'md:flex-row-reverse' : ''
                   } items-start md:items-center relative`}
                 >
-                  {/* Glowing neon sphere marker dot on Central spine track line */}
+                  {/* Sphere marker dot on Central spine track line */}
                   <div 
                     id={markerId}
                     className="absolute left-4 md:left-1/2 -translate-x-[13px] z-10 flex items-center justify-center"
                     style={{ top: '24px' }}
                   >
-                    <div className="h-6 w-6 rounded-full bg-[#020008] border-2 border-brand-secondary flex items-center justify-center shadow-[0_0_12px_rgba(6,182,212,0.8)] animate-pulse">
-                      <div className="h-2 w-2 rounded-full bg-brand-secondary"></div>
+                    <div className="h-6 w-6 rounded-full bg-[#050505] border-2 border-neutral-400 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-neutral-400"></div>
                     </div>
                   </div>
 
@@ -75,15 +77,15 @@ export default function Education() {
                     id={cardId}
                     className="ml-12 md:ml-0 md:w-1/2 px-4 md:px-8"
                   >
-                    <div className="relative flex flex-col justify-between py-6 px-6 sm:px-8 rounded-2xl glass border border-brand-primary/10 bg-brand-primary/4 hover:border-brand-secondary/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.18)] transition-all duration-300">
+                    <div className="relative flex flex-col justify-between py-8 px-8 rounded-[2rem] border border-white/5 bg-[#0f0f0f] hover:border-white/20 hover:shadow-[0_0_45px_rgba(255,255,255,0.02)] transition-all duration-300">
                       {/* Top banner labels */}
-                      <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4 border-b border-brand-primary/10 pb-4">
-                        <span className="flex items-center gap-2 text-xs text-brand-secondary font-mono">
-                          <Calendar className="h-4 w-4" />
+                      <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4 border-b border-white/5 pb-4">
+                        <span className="flex items-center gap-2 text-xs text-neutral-400 font-mono">
+                          <Calendar className="h-4 w-4 text-neutral-500" />
                           {item.duration}
                         </span>
                         {item.badge && (
-                          <span className="px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-wider bg-[#06b6d4]/10 text-brand-secondary border border-[#06b6d4]/30 shadow-[0_0_10px_rgba(6,182,212,0.2)] animate-pulse uppercase">
+                          <span className="px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-wider bg-white/5 text-neutral-300 border border-white/10 uppercase">
                             {item.badge}
                           </span>
                         )}
@@ -91,8 +93,8 @@ export default function Education() {
 
                       {/* Header title */}
                       <div className="flex items-start gap-4 mb-4">
-                        <div className="p-3 rounded-xl border border-brand-primary/20 bg-brand-primary/10 mt-1">
-                          <GraduationCap className="h-5 w-5 text-brand-secondary" />
+                        <div className="p-3 rounded-2xl bg-white/5 border border-white/5 mt-1 text-white">
+                          <GraduationCap className="h-5 w-5" />
                         </div>
                         <div>
                           <h3 className="font-display text-xl font-bold text-white tracking-wide">
@@ -106,8 +108,8 @@ export default function Education() {
 
                       {/* Score metrics */}
                       {item.grade && (
-                        <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-900/60 border border-neutral-800 text-sm text-white font-mono font-bold">
-                          <Award className="h-4 w-4 text-brand-secondary" />
+                        <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#121212] border border-white/5 text-sm text-white font-mono font-bold">
+                          <Award className="h-4 w-4 text-neutral-400" />
                           <span>{item.grade}</span>
                         </div>
                       )}
@@ -117,7 +119,7 @@ export default function Education() {
                         <ul className="space-y-2 mt-2">
                           {item.details.map((detail, dIdx) => (
                             <li key={dIdx} className="text-xs sm:text-sm text-neutral-400 flex items-start gap-2.5 leading-relaxed font-sans font-[400]">
-                              <CheckCircle2 className="h-4 w-4 mt-0.5 text-brand-primary flex-shrink-0" />
+                              <CheckCircle2 className="h-4 w-4 mt-0.5 text-neutral-500 flex-shrink-0" />
                               <span>{detail}</span>
                             </li>
                           ))}

@@ -89,6 +89,51 @@ const BrandBadgeVector = ({ type }: { type: Certification['logoType'] }) => {
           <path d="M56 56 L59 59 L65 53" fill="none" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
+    case 'eduskills':
+      return (
+        <svg viewBox="0 0 120 120" className="w-20 h-20 drop-shadow-[0_0_15px_rgba(139,92,246,0.4)]">
+          <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5 5" className="text-purple-500/30" />
+          {/* High-Fidelity Badge Shield */}
+          <path d="M36 32 L60 18 L84 32 L84 66 C84 84, 60 98, 60 98 C60 98, 36 84, 36 66 Z" fill="rgba(167,139,250,0.08)" stroke="currentColor" strokeWidth="2.5" className="text-purple-500" />
+          {/* Inner Golden Seal Ring */}
+          <circle cx="60" cy="52" r="16" fill="rgba(245,158,11,0.06)" stroke="#f59e0b" strokeWidth="1.5" />
+          <polygon points="60,42 63,48 69,49 65,54 66,60 60,57 54,60 55,54 51,49 57,48" fill="#fbbf24" stroke="#d97706" strokeWidth="1" />
+          {/* Achievement Ribbons */}
+          <path d="M48 84 L40 108 L52 100 L64 108 L56 84" fill="currentColor" className="text-purple-600" opacity="0.65" />
+          <path d="M72 84 L64 108 L76 100 L88 108 L80 84" fill="currentColor" className="text-purple-500" />
+        </svg>
+      );
+    case 'nptel':
+      return (
+        <svg viewBox="0 0 120 120" className="w-20 h-20 drop-shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+          <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-rose-500/20" />
+          {/* Elite Circle Laurels */}
+          <circle cx="60" cy="60" r="42" fill="none" stroke="currentColor" strokeWidth="3" className="text-rose-500" strokeDasharray="80 15" />
+          {/* Swirling dynamic lines (resembles Indian Institute of Technology / academic excellence motif) */}
+          <path d="M60 28 C45 28, 40 45, 40 60 C40 75, 48 84, 60 84 C72 84, 80 75, 80 60" fill="none" stroke="#f43f5e" strokeWidth="2" />
+          <circle cx="60" cy="60" r="14" fill="#ffe4e6" stroke="#e11d48" strokeWidth="2" />
+          {/* Verified Check Inside SWAYAM circle */}
+          <path d="M54 60 L58 64 L66 56" fill="none" stroke="#e11d48" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Elite badge star details */}
+          <circle cx="36" cy="38" r="3" fill="#fbbf24" />
+          <circle cx="84" cy="38" r="3" fill="#fbbf24" />
+          <circle cx="60" cy="18" r="3" fill="#fbbf24" />
+        </svg>
+      );
+    case 'lnt':
+      return (
+        <svg viewBox="0 0 120 120" className="w-20 h-20 drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+          <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" className="text-cyan-500/30" />
+          {/* L&T Bold Structural Grid Hex Badge */}
+          <path d="M60 16 L96 36 L96 78 L60 98 L24 78 L24 36 Z" fill="rgba(8,145,178,0.05)" stroke="currentColor" strokeWidth="3.5" className="text-cyan-500" />
+          {/* Cross lines showing geometric precision */}
+          <line x1="24" y1="36" x2="96" y2="78" stroke="currentColor" strokeWidth="1" className="text-cyan-500/20" />
+          <line x1="96" y1="36" x2="24" y2="78" stroke="currentColor" strokeWidth="1" className="text-cyan-500/20" />
+          {/* Inside core circle representing pathway completion */}
+          <rect x="46" y="46" width="28" height="28" rx="6" fill="#06b6d4" stroke="#ffffff" strokeWidth="1.5" />
+          <path d="M52 60 L57 65 L68 53" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
     default:
       return null;
   }
@@ -100,29 +145,28 @@ export default function Certifications() {
   return (
     <section 
       id="certifications" 
-      className="relative py-24 bg-[#020008] overflow-hidden border-t border-violet-500/10"
+      className="relative py-28 bg-[#050505] overflow-hidden border-t border-white/5"
     >
       {/* Dynamic light/dark theme grid mesh backdrop matching the stack style perfectly */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808003_1px,transparent_1px),linear-gradient(to_bottom,#80808003_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none opacity-25"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none opacity-25"></div>
       
-      {/* Cyber ambient purple glows behind cards */}
-      <div className="absolute top-1/3 right-10 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none z-0"></div>
-      <div className="absolute bottom-1/3 left-10 w-96 h-96 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none z-0"></div>
+      {/* Cyber ambient glows behind cards */}
+      <div className="absolute top-1/3 right-10 w-96 h-96 bg-white/2 rounded-full blur-3xl pointer-events-none z-0"></div>
+      <div className="absolute bottom-1/3 left-10 w-96 h-96 bg-white/2 rounded-full blur-3xl pointer-events-none z-0"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs text-brand-secondary tracking-widest uppercase font-bold px-3 py-1 bg-brand-secondary/10 rounded-full border border-brand-secondary/20">
+        <div className="text-left mb-16 max-w-3xl">
+          <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase font-semibold px-3 py-1 bg-white/5 rounded-full border border-white/10">
             05 / Credentials
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-            Industry <span className="gradient-text">Certifications</span>
+          <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white mt-4">
+            Industry Certifications
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto mt-4 text-sm sm:text-base leading-relaxed font-sans font-[400] select-text">
+          <p className="text-neutral-400 mt-4 text-base sm:text-lg font-light leading-relaxed select-text">
             Verified expertise in Deep Learning, Large Language Models, Agentic reasoning, and cloud-native machine learning architectures.
           </p>
-          <div className="mt-4 h-[2px] w-12 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto"></div>
         </div>
 
         {/* Credentials Grid */}
@@ -137,23 +181,20 @@ export default function Certifications() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
                 id={cleanId}
-                className="group relative flex flex-col justify-between py-6 px-6 rounded-2xl glass border border-brand-primary/10 bg-brand-primary/4 hover:border-brand-secondary/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.18)] hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col justify-between py-8 px-8 rounded-[2rem] border border-white/5 bg-[#0f0f0f] hover:border-white/20 hover:shadow-[0_0_45px_rgba(255,255,255,0.02)] transition-all duration-300"
               >
-                {/* Embedded Glow Accents */}
-                <div className="absolute -top-1.5 -right-1.5 w-12 h-12 bg-brand-secondary/5 rounded-full blur-xl pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                
                 {/* Brand Badge Icon & Header Header Row */}
                 <div className="flex items-start justify-between gap-4 mb-5">
-                  <div className="shrink-0 scale-95 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                  <div className="shrink-0 scale-95 group-hover:scale-102 transition-transform duration-500">
                     <BrandBadgeVector type={cert.logoType} />
                   </div>
                   
                   <div className="flex flex-col items-end">
                     <span className="flex items-center gap-1.5 text-xs text-neutral-400 font-mono">
-                      <Calendar className="h-3.5 w-3.5 text-brand-secondary" />
+                      <Calendar className="h-3.5 w-3.5 text-neutral-500" />
                       {cert.date}
                     </span>
-                    <span className="px-2.5 py-0.5 mt-2 rounded-full text-[9px] font-mono font-semibold tracking-wider bg-white/5 border border-white/10 text-neutral-300 uppercase">
+                    <span className="px-2.5 py-0.5 mt-2 rounded-full text-[9px] font-mono font-semibold tracking-wider bg-white/5 border border-white/10 text-neutral-400 uppercase">
                       {cert.issuer}
                     </span>
                   </div>
@@ -161,12 +202,12 @@ export default function Certifications() {
 
                 {/* Certification Title & Issuer details */}
                 <div className="mb-4">
-                  <h3 className="font-display text-lg font-bold text-white tracking-wide group-hover:text-brand-secondary transition-colors duration-200">
+                  <h3 className="font-display text-lg font-bold text-white tracking-wide group-hover:text-neutral-300 transition-colors duration-200">
                     {cert.title}
                   </h3>
-                  <div className="flex items-center gap-1.5 mt-1">
-                    <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span className="text-xs text-emerald-400/90 font-mono font-semibold uppercase tracking-wide">
+                  <div className="flex items-center gap-1.5 mt-1.5">
+                    <ShieldCheck className="h-4 w-4 text-neutral-400 shrink-0" />
+                    <span className="text-xs text-neutral-400 font-mono font-semibold uppercase tracking-wide">
                       Verified Skill-Set
                     </span>
                   </div>
@@ -177,7 +218,7 @@ export default function Certifications() {
                   {cert.skills.map((skill, sIdx) => (
                     <span 
                       key={sIdx}
-                      className="px-2.5 py-1 rounded-md text-[10px] font-sans font-medium bg-brand-primary/10 border border-brand-primary/25 text-neutral-300"
+                      className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/5 border border-white/5 text-neutral-300"
                     >
                       {skill}
                     </span>
@@ -187,7 +228,7 @@ export default function Certifications() {
                 {/* Footer interactive buttons (Verify Link) */}
                 <div className="pt-4 border-t border-white/5 mt-auto flex items-center justify-between">
                   <span className="text-[10px] text-neutral-500 font-mono flex items-center gap-1">
-                    <BadgeCheck className="h-3.5 w-3.5 text-brand-primary" />
+                    <BadgeCheck className="h-3.5 w-3.5 text-neutral-500" />
                     Authentic Credential
                   </span>
                   
@@ -195,11 +236,11 @@ export default function Certifications() {
                     href={cert.verifyLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-brand-secondary hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] px-3 py-1.5 rounded-lg border border-brand-secondary/20 hover:bg-brand-secondary/10 hover:border-brand-secondary/40"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-white hover:text-neutral-300 transition-all duration-300 px-4 py-2 rounded-full border border-white/10 bg-white/5"
                     id={`cert-${cert.id}-verify-button`}
                   >
                     Verify
-                    <ExternalLink className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                    <ExternalLink className="h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   </a>
                 </div>
               </motion.div>

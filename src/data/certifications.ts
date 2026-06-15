@@ -5,69 +5,49 @@ export interface Certification {
   date: string;
   verifyLink: string;
   skills: string[];
-  logoType: 'google' | 'coursera' | 'huggingface' | 'deeplearning';
+  logoType: 'google' | 'coursera' | 'huggingface' | 'deeplearning' | 'eduskills' | 'nptel' | 'lnt';
   badgeColor: string; // Tailwind gradient classes
 }
 
 export const certifications: Certification[] = [
   {
-    id: 'cert-1',
-    title: 'Generative AI Fundamentals',
-    issuer: 'Google Cloud',
-    date: 'March 2024',
-    verifyLink: 'https://www.cloudskillsboost.google/public_profiles/dhruv-dinesh-patil',
-    skills: ['Generative AI', 'Large Language Models', 'Responsible AI', 'Image Generation'],
-    logoType: 'google',
-    badgeColor: 'from-blue-600 via-red-500 to-yellow-500'
+    id: 'cert-7',
+    title: 'Generative AI, Deep Learning & Language Models Virtual Internship',
+    issuer: 'EduSkills / AICTE',
+    date: 'Jan - Mar 2026',
+    verifyLink: 'https://virtualinternship.eduskillsfoundation.org/', // ID: 4802b50c11ee229d2585
+    skills: ['Generative AI', 'Deep Learning', 'Large Language Models', 'NLP Agents'],
+    logoType: 'eduskills',
+    badgeColor: 'from-sky-400 via-blue-500 to-purple-600'
   },
   {
-    id: 'cert-2',
-    title: 'AI Agentic Workflows & Tool Use',
-    issuer: 'DeepLearning.AI',
-    date: 'January 2024',
-    verifyLink: 'https://coursera.org/verify/specialization/deeplearning-ai-agents',
-    skills: ['LangChain', 'Agentic AI', 'LlamaIndex', 'Function Calling'],
-    logoType: 'deeplearning',
-    badgeColor: 'from-emerald-500 to-teal-600'
+    id: 'cert-8',
+    title: 'Professional UI/UX Design & Web Prototyping Virtual Internship',
+    issuer: 'EduSkills / AICTE',
+    date: 'Apr - Jun 2026',
+    verifyLink: 'https://virtualinternship.eduskillsfoundation.org/', // ID: 40f88768baaca1321cf
+    skills: ['UI/UX Design', 'Web Prototyping', 'Figma Wireframing', 'Responsive Systems'],
+    logoType: 'eduskills',
+    badgeColor: 'from-indigo-500 via-purple-500 to-pink-500'
   },
   {
-    id: 'cert-3',
-    title: 'NLP & Deep Learning Specialization',
-    issuer: 'Hugging Face',
-    date: 'December 2023',
-    verifyLink: 'https://huggingface.co/colearning/directory',
-    skills: ['Transformers', 'Hugging Face Hub', 'PyTorch', 'Model Fine-Tuning'],
-    logoType: 'huggingface',
-    badgeColor: 'from-yellow-400 via-amber-500 to-amber-600'
+    id: 'cert-9',
+    title: 'Enhancing Soft Skills and Personality (Elite)',
+    issuer: 'NPTEL (IIT Kanpur)',
+    date: 'Feb - Apr 2026',
+    verifyLink: 'https://nptel.ac.in/noc/', // Roll: NPTEL26HS47S1161802442
+    skills: ['Interpersonal Dynamics', 'Professional Communication', 'Emotional Intelligence', 'Team Leadership'],
+    logoType: 'nptel',
+    badgeColor: 'from-rose-500 to-red-600'
   },
   {
-    id: 'cert-4',
-    title: 'Neural Networks & Deep Learning',
-    issuer: 'Coursera',
-    date: 'October 2023',
-    verifyLink: 'https://coursera.org/verify/neural-networks-deep-learning',
-    skills: ['Deep Learning', 'Neural Networks', 'Python', 'Parameter Optimization'],
-    logoType: 'coursera',
-    badgeColor: 'from-blue-500 to-indigo-600'
-  },
-  {
-    id: 'cert-5',
-    title: 'Google Cloud Certified: Associate Cloud Engineer',
-    issuer: 'Google Cloud',
-    date: 'February 2024',
-    verifyLink: 'https://www.credly.com/org/google/cloud-engineer',
-    skills: ['Cloud Infrastructure', 'Google Kubernetes Engine', 'IAM Security', 'App Engine'],
-    logoType: 'google',
-    badgeColor: 'from-blue-500 via-indigo-500 to-cyan-500'
-  },
-  {
-    id: 'cert-6',
-    title: 'Natural Language Processing in TensorFlow',
-    issuer: 'DeepLearning.AI',
-    date: 'November 2023',
-    verifyLink: 'https://coursera.org/verify/nlp-tensorflow',
-    skills: ['TensorFlow', 'Recurrent Neural Networks', 'Word Embeddings', 'Tokenizers'],
-    logoType: 'deeplearning',
-    badgeColor: 'from-emerald-600 to-green-500'
+    id: 'cert-10',
+    title: 'Full-Stack Flask Development Mastery',
+    issuer: 'L&T EduTech',
+    date: 'May 2026',
+    verifyLink: 'https://lntedutech.com/', // CID: LTE/EI/1000
+    skills: ['Python Flask', 'Full-Stack Web', 'RESTful API Engineering', 'Database Management', 'Routing Orchestration'],
+    logoType: 'lnt',
+    badgeColor: 'from-cyan-500 to-blue-600'
   }
 ];

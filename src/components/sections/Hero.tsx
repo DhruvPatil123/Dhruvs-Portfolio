@@ -70,7 +70,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020008]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]"
     >
       {/* 3D Wireframe Canvas Backdrop or high performance css gradient for mobiles */}
       <div className="absolute inset-0 z-0">
@@ -83,21 +83,21 @@ export default function Hero() {
         )}
       </div>
 
-      {/* Futuristic Purple & Cyan blurred ambient glows with active central contrast shield */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(2,0,8,0.72)_0%,rgba(2,0,8,0.3)_60%,rgba(2,0,8,0)_100%)] z-10 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-secondary/8 ml-auto rounded-full blur-3xl pointer-events-none animate-pulse-slow z-10" />
+      {/* Futuristic Obsidian blurred ambient glows with active central contrast shield */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(5,5,5,0.72)_0%,rgba(5,5,5,0.3)_60%,rgba(5,5,5,0)_100%)] z-10 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white/3 rounded-full blur-3xl pointer-events-none animate-pulse-slow z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/2 ml-auto rounded-full blur-3xl pointer-events-none animate-pulse-slow z-10" />
 
       {/* Floating Left Sidebar Social Navigation (Hidden on small screens) */}
       <div className="absolute left-6 lg:left-10 bottom-1/4 hidden md:flex flex-col items-center space-y-6 z-25">
-        <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-brand-primary/60"></div>
+        <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-white/20"></div>
         
         <a 
           href={socials.github} 
           target="_blank" 
           rel="noopener noreferrer" 
           id="hero-social-github"
-          className="p-2 text-neutral-300 hover:text-white hover:shadow-[0_0_15px_rgba(124,58,237,0.7)] hover:border-brand-primary/50 border border-transparent rounded-lg transition-all duration-300 bg-neutral-900/10 backdrop-blur-xs"
+          className="p-2 text-neutral-400 hover:text-white hover:border-white/30 border border-white/5 rounded-lg transition-all duration-300 bg-white/3 backdrop-blur-xs"
           aria-label="GitHub Profile"
         >
           <Github className="h-5 w-5" />
@@ -107,7 +107,7 @@ export default function Hero() {
           target="_blank" 
           rel="noopener noreferrer" 
           id="hero-social-linkedin"
-          className="p-2 text-neutral-300 hover:text-white hover:shadow-[0_0_15px_rgba(6,182,212,0.7)] hover:border-brand-secondary/50 border border-transparent rounded-lg transition-all duration-300 bg-neutral-900/10 backdrop-blur-xs"
+          className="p-2 text-neutral-400 hover:text-white hover:border-white/30 border border-white/5 rounded-lg transition-all duration-300 bg-white/3 backdrop-blur-xs"
           aria-label="LinkedIn Profile"
         >
           <Linkedin className="h-5 w-5" />
@@ -117,7 +117,7 @@ export default function Hero() {
           target="_blank" 
           rel="noopener noreferrer" 
           id="hero-social-instagram"
-          className="p-2 text-neutral-300 hover:text-white hover:shadow-[0_0_15px_rgba(124,58,237,0.7)] hover:border-brand-primary/50 border border-transparent rounded-lg transition-all duration-300 bg-neutral-900/10 backdrop-blur-xs"
+          className="p-2 text-neutral-400 hover:text-white hover:border-white/30 border border-white/5 rounded-lg transition-all duration-300 bg-white/3 backdrop-blur-xs"
           aria-label="Instagram Profile"
         >
           <Instagram className="h-5 w-5" />
@@ -127,13 +127,13 @@ export default function Hero() {
           target="_blank" 
           rel="noopener noreferrer" 
           id="hero-social-leetcode"
-          className="p-2 text-neutral-300 hover:text-white hover:shadow-[0_0_15px_rgba(6,182,212,0.7)] hover:border-brand-secondary/50 border border-transparent rounded-lg transition-all duration-300 bg-neutral-900/10 backdrop-blur-xs"
+          className="p-2 text-neutral-400 hover:text-white hover:border-white/30 border border-white/5 rounded-lg transition-all duration-300 bg-white/3 backdrop-blur-xs"
           aria-label="LeetCode Profile"
         >
           <Code2 className="h-5 w-5" />
         </a>
 
-        <div className="w-[1px] h-20 bg-gradient-to-t from-transparent to-brand-secondary/60"></div>
+        <div className="w-[1px] h-20 bg-gradient-to-t from-transparent to-white/20"></div>
       </div>
 
       {/* Main HTML Text Layout - Layered perfectly above the 3D WebGL Canvas Backdrop */}
@@ -144,61 +144,70 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="space-y-6"
         >
-          {/* Tagline floating badge */}
+          {/* Tagline floating badge resembling Image 1 */}
           <div>
-            <span className="font-mono text-xs md:text-sm tracking-widest text-[#22d3ee] uppercase font-bold px-4 py-1.5 bg-[#06b6d4]/15 rounded-full border border-[#26c6da]/40 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)] inline-block">
-              Welcome to the AI Horizon
+            <span className="font-mono text-xs md:text-xs tracking-widest text-neutral-300 uppercase font-semibold px-4 py-1.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-md shadow-md inline-block">
+              ✦ &nbsp; Crafting Intelligent Generative Architectures &nbsp; ✦
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight text-white leading-none select-text">
-            <span className="block text-white text-3xl sm:text-5xl font-light tracking-wide mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            <span className="block text-neutral-400 text-lg sm:text-2xl font-light tracking-widest uppercase mb-4">
               Hello, I&apos;m
             </span>
             <GlitchShaderText
               text="Dhruv Dinesh Patil"
-              className="drop-shadow-[0_0_35px_rgba(124,58,237,0.25)]"
+              className="drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] bg-clip-text text-white"
             />
           </h1>
 
-          {/* Typewriter element */}
+          {/* Typewriter element inside a code container */}
           <div className="h-10 sm:h-12 flex items-center justify-center">
-            <p className="font-mono text-lg sm:text-xl md:text-2xl text-neutral-200 flex items-center select-text drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
-              <span className="text-[#22d3ee] mr-2.5 font-bold font-sans">&gt;</span>
+            <p className="font-mono text-base sm:text-lg md:text-xl text-neutral-300 flex items-center select-text bg-white/3 px-4 py-1.5 rounded-full border border-white/5 backdrop-blur-md">
+              <span className="text-white/40 mr-2.5 font-bold font-sans">&gt;</span>
               <span className="text-white font-bold">{currentText}</span>
-              <span className="inline-block w-2.5 h-6 ml-1.5 bg-[#22d3ee] animate-typewriter-blink"></span>
+              <span className="inline-block w-2 h-5 ml-1.5 bg-white animate-typewriter-blink"></span>
             </p>
           </div>
 
-          <p className="text-neutral-100 max-w-xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed font-sans font-medium select-text drop-shadow-[0_2px_5px_rgba(0,0,0,0.9)]">
+          <p className="text-neutral-400 max-w-xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed font-sans font-medium select-text">
             AI Engineer & Generative Model developer crafting high-performance agentic frameworks, large language models, and cloud-native solutions.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Matching Image 1 pills */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a
               href="#projects"
               onClick={handleScrollToProjects}
               id="hero-cta-projects"
-              className="neon-btn-primary px-8 py-3.5 rounded-full font-display text-sm font-semibold tracking-wider text-white w-full sm:w-auto text-center"
+              className="neon-btn-primary px-8 py-3.5 rounded-full font-display text-sm font-semibold tracking-wider text-black bg-white w-full sm:w-auto text-center"
             >
-              View Projects
+              See Projects
             </a>
             <a
               href="/resume.pdf"
               download="Dhruv_Dinesh_Patil_Resume.pdf"
               id="hero-cta-resume"
-              className="neon-btn-secondary px-8 py-3.5 rounded-full font-display text-sm font-semibold tracking-wider text-neutral-200 border w-full sm:w-auto flex items-center justify-center gap-2 text-center"
+              className="neon-btn-secondary px-8 py-3.5 rounded-full font-display text-sm font-semibold tracking-wider text-white border border-white/10 bg-white/5 w-full sm:w-auto flex items-center justify-center gap-2 text-center"
             >
-              <Download className="h-4 w-4 text-brand-secondary" />
+              <Download className="h-4 w-4 text-neutral-300" />
               Download Resume
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Down arrow scroll helper */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      {/* Down arrow scroll helper with scrolling path line design mimicking Image 1 */}
+      <div className="absolute bottom-6 left-0 right-0 z-10 flex flex-col items-center">
+        {/* Scroll down path ribbon */}
+        <div className="hidden md:flex items-center gap-8 text-[11px] font-mono text-neutral-500 mb-4 px-6 py-1.5 rounded-full border border-white/5 bg-white/2 backdrop-blur-sm">
+          <span>O Google Cloud</span>
+          <span>✦ DeepLearning.AI</span>
+          <span>O LLMs</span>
+          <span>✦ PyTorch</span>
+          <span>O Agentic Chains</span>
+        </div>
+
         <a
           href="#about"
           onClick={(e) => {
@@ -212,10 +221,10 @@ export default function Hero() {
             }
           }}
           id="hero-scroll-btn"
-          className="p-2 rounded-full border border-neutral-800 bg-neutral-900/50 hover:border-brand-secondary/50 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+          className="p-2 rounded-full border border-white/15 bg-white/5 hover:border-white/40 text-neutral-400 hover:text-white transition-colors cursor-pointer"
           aria-label="Scroll to About section"
         >
-          <ArrowDown className="h-5 w-5 text-brand-secondary" />
+          <ArrowDown className="h-5 w-5 text-neutral-300" />
         </a>
       </div>
     </section>

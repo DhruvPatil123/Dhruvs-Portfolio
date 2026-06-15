@@ -40,16 +40,15 @@ NOTABLE PORTFOLIO PROJECTS:
 9. Flappy Bird: Classic Flappy Bird game recreated from scratch using HTML5 Canvas.
 
 INDUSTRY CERTIFICATIONS:
-- Google Cloud: Generative AI Fundamentals & Associate Cloud Engineer (verified expertise in foundational LLMs, model tuning, cloud deployment, and IAM security).
-- DeepLearning.AI: AI Agentic Workflows & Tool Use, and Natural Language Processing in TensorFlow (specialized design of recursive agents, function calling, sequence mapping, and word embeddings).
-- Hugging Face: NLP & Deep Learning Specialization (hands-on with Transformers, Hugging Face Hub APIs, model adaptation, and dataset serialization).
-- Coursera: Neural Networks & Deep Learning (foundational multi-layer model architectures, optimization mathematics, and model parameterization).
+- EduSkills / AICTE: Generative AI, Deep Learning & Language Models Virtual Internship (Grade A) & Professional UI/UX Design & Web Prototyping Virtual Internship (Grade O / Outstanding).
+- NPTEL (IIT Kanpur): Enhancing Soft Skills and Personality (Elite certified with consolidated 66% score).
+- L&T EduTech: Full-Stack Flask Development Mastery Course Pathway Completion (5 courses & 27Hrs learning hours).
 
 VERIFIED CODING RANKINGS & ACHIEVEMENTS:
-- LeetCode / Coding Platform Solved: 850+ problems solved across LeetCode, CodeChef, and HackerRank (ranking in the Top 5% globally in competitive coding contests).
-- Hackathons Sprint: Completed 3 major competitive hackathons, including Smart India Hackathon (SIH) Finalist and campus winner (designed multi-modal live proctor systems).
-- GitHub Commits / Contributions: Compiled over 1,200 open-source commits and pipeline contributions in the past year.
-- Production Deployed Builds: Successfully shipped and hosted 12+ real-world production web applications (such as Raincrew.AI talent screeners and VisionCraft.AI video generators).
+- LeetCode / Coding Platform Solved: Achieved a global LeetCode World Rank of 1,686,729, consistently optimizing algorithmic proficiency.
+- Hackathons Sprint: Built 1 major competitive hackathon project as an SIH Finalist & Builder (integrated real-time multimodal proctoring).
+- GitHub Commits / Contributions: Active open-source commit history with over 10+ open-source contributions.
+- Production Deployed Builds: Successfully shipped and hosted 6 real-world production projects and generative assets.
 
 CORE SKILLS / EXPERTISE:
 - AI/ML Core: Python, PyTorch, TensorFlow, Hugging Face, LangChain, LlamaIndex, Prompt Engineering, RAG (Retrieval-Augmented Generation), Large Language Models, Agentic AI, AI/ML Projects.

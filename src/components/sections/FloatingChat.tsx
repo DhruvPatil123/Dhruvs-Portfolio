@@ -97,25 +97,57 @@ export default function FloatingChat() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.92 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="mb-4 w-[340px] sm:w-[380px] h-[520px] max-h-[80vh] flex flex-col rounded-2xl border border-brand-primary/20 bg-[#04010e]/95 backdrop-blur-lg shadow-[0_12px_40px_rgba(139,92,246,0.25)] overflow-hidden"
+            initial={{ 
+              clipPath: "circle(24px at calc(100% - 28px) calc(100% - 28px))",
+              opacity: 0, 
+              scale: 0.85, 
+              y: 40 
+            }}
+            animate={{ 
+              clipPath: "circle(800px at calc(100% - 28px) calc(100% - 28px))",
+              opacity: 1, 
+              scale: 1, 
+              y: 0 
+            }}
+            exit={{ 
+              clipPath: "circle(24px at calc(100% - 28px) calc(100% - 28px))",
+              opacity: 0, 
+              scale: 0.85, 
+              y: 40 
+            }}
+            transition={{ 
+              type: 'spring', 
+              damping: 32, 
+              stiffness: 240, 
+              mass: 1 
+            }}
+            className="mb-4 w-[340px] sm:w-[380px] h-[520px] max-h-[80vh] flex flex-col rounded-[2rem] border border-white/10 bg-[#0c0c0ced] backdrop-blur-lg shadow-2xl overflow-hidden relative"
           >
+            {/* Creative "Sliding Window" Continuous Laser Scan Line */}
+            <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none z-30 animate-sliding-laser shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
+
             {/* Header */}
-            <div className="p-4 bg-gradient-to-r from-brand-primary/20 to-brand-secondary/20 border-b border-brand-primary/10 flex items-center justify-between">
+            <div className="p-4 bg-white/5 border-b border-white/5 flex items-center justify-between relative">
+              {/* Creative sliding window status ticker */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-white/5 overflow-hidden">
+                <motion.div 
+                  className="h-full w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                  animate={{ x: ['-100%', '300%'] }}
+                  transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
+                />
+              </div>
+
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center border border-white/20">
+                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                     <Bot className="h-5 w-5 text-white" />
                   </div>
-                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-500 border-2 border-[#04010e]" />
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-neutral-400 border border-[#050505]" />
                 </div>
                 <div>
                   <h3 className="font-display text-sm font-bold text-white tracking-wide flex items-center gap-1.5">
                     Dhruv&apos;s AI Agent
-                    <Sparkles className="h-3 w-3 text-brand-secondary animate-pulse" />
+                    <Sparkles className="h-3 w-3 text-neutral-400" />
                   </h3>
                   <p className="text-[10px] uppercase font-mono text-neutral-400 tracking-widest">
                     Interactive Chat Double
@@ -125,7 +157,7 @@ export default function FloatingChat() {
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-lg border border-white/5 hover:border-brand-secondary/30 text-neutral-400 hover:text-white transition-colors duration-200"
+                className="p-1.5 rounded-full border border-white/5 hover:border-white/20 text-neutral-400 hover:text-white transition-colors duration-200"
                 aria-label="Close Chat"
               >
                 <X className="h-4 w-4" />
@@ -141,7 +173,7 @@ export default function FloatingChat() {
                 >
                   <div className="flex gap-2 max-w-[85%]">
                     {msg.role === 'assistant' && (
-                      <div className="w-6 h-6 rounded-full bg-brand-primary/25 flex items-center justify-center shrink-0 border border-brand-primary/30 mt-1">
+                      <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5 mt-1">
                         <Bot className="h-3.5 w-3.5 text-neutral-200" />
                       </div>
                     )}
@@ -150,8 +182,8 @@ export default function FloatingChat() {
                       <div
                         className={`p-3 rounded-xl text-xs sm:text-sm leading-relaxed ${
                           msg.role === 'user'
-                            ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white rounded-tr-none'
-                            : 'bg-white/5 border border-white/10 text-neutral-200 rounded-tl-none'
+                            ? 'bg-white text-neutral-900 rounded-tr-none font-medium'
+                            : 'bg-white/5 border border-white/5 text-neutral-200 rounded-tl-none'
                         }`}
                       >
                         <p className="whitespace-pre-wrap">{msg.content}</p>
@@ -168,7 +200,7 @@ export default function FloatingChat() {
                     </div>
 
                     {msg.role === 'user' && (
-                      <div className="w-6 h-6 rounded-full bg-brand-secondary/25 flex items-center justify-center shrink-0 border border-brand-secondary/30 mt-1">
+                      <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5 mt-1">
                         <User className="h-3.5 w-3.5 text-neutral-200" />
                       </div>
                     )}
@@ -179,16 +211,16 @@ export default function FloatingChat() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="flex gap-2 max-w-[80%]">
-                    <div className="w-6 h-6 rounded-full bg-brand-primary/25 flex items-center justify-center shrink-0 animate-spin">
+                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0 animate-spin">
                       <Loader2 className="h-3.5 w-3.5 text-neutral-400" />
                     </div>
                     <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-neutral-400 rounded-tl-none flex items-center gap-2">
                       <div className="flex gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-bounce [animation-delay:-0.3s]"></span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-bounce [animation-delay:-0.15s]"></span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-bounce"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-bounce [animation-delay:-0.3s]"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-bounce [animation-delay:-0.15s]"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-bounce"></span>
                       </div>
-                      <span className="text-[10px] font-mono tracking-widest text-[#06b6d4]">Synthesizing response...</span>
+                      <span className="text-[10px] font-mono tracking-widest text-neutral-400">Synthesizing response...</span>
                     </div>
                   </div>
                 </div>
@@ -198,19 +230,19 @@ export default function FloatingChat() {
             </div>
 
             {/* Input Form */}
-            <form onSubmit={handleSend} className="p-3 border-t border-white/10 bg-black/40 flex gap-2">
+            <form onSubmit={handleSend} className="p-3 border-t border-white/5 bg-black/40 flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask Dhruv about AI, projects..."
-                className="flex-1 bg-white/5 border border-white/10 focus:border-brand-secondary/50 focus:ring-1 focus:ring-brand-secondary/30 rounded-xl px-3 py-2 text-xs sm:text-sm text-white placeholder-neutral-500 outline-none transition-all duration-200"
+                className="flex-1 bg-white/5 border border-white/5 focus:border-white/20 focus:ring-1 focus:ring-white/10 rounded-xl px-3 py-2 text-xs sm:text-sm text-white placeholder-neutral-500 outline-none transition-all duration-200"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 disabled:from-neutral-800 disabled:to-neutral-900 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:cursor-not-allowed border border-white/10"
+                className="px-3.5 py-2 rounded-xl bg-white hover:bg-neutral-200 disabled:bg-neutral-800 disabled:text-neutral-500 text-[#050505] flex items-center justify-center transition-all duration-200 cursor-pointer disabled:cursor-not-allowed font-mono hover:text-[#000]"
               >
                 <Send className="h-3.5 w-3.5" />
               </button>
@@ -222,9 +254,9 @@ export default function FloatingChat() {
       {/* Floating Toggle Bubble */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.08 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center text-white shadow-[0_0_20px_rgba(139,92,246,0.35)] cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-secondary/50"
+        className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#050505] shadow-2xl cursor-pointer focus:outline-none"
         aria-label="Toggle Portfolio AI Assistant"
       >
         <AnimatePresence mode="wait">
@@ -245,11 +277,9 @@ export default function FloatingChat() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="relative"
+              className="relative animate-[pulse_3s_infinite]"
             >
               <MessageSquare className="h-6 w-6" />
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-green-400 border border-[#04010e] animate-ping" />
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-green-400 border border-[#04010e]" />
             </motion.div>
           )}
         </AnimatePresence>
