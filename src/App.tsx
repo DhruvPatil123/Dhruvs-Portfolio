@@ -1,4 +1,5 @@
 import React from 'react';
+import {Analytics} from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -44,6 +45,9 @@ export default function App() {
 
       {/* Floating Interactive Chat Assistant Bubble */}
       <FloatingChat />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
