@@ -101,11 +101,15 @@ export default function Navbar() {
             <a 
               href="#home"
               onClick={(e) => handleLinkClick(e, '#home')}
-              className="flex items-center"
+              className="flex items-center gap-2.5 group"
               id="nav-logo"
             >
-              <span className="font-display text-2xl font-bold tracking-wider text-white">
-                DDP
+              {/* Premium Black Circle with White Triangle Logo */}
+              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-black border border-white/20 group-hover:border-white/40 transition-all duration-300 shadow-md group-active:scale-95">
+                <span className="text-[10px] text-white select-none leading-none translate-y-[-0.5px]">▲</span>
+              </div>
+              <span className="font-display text-lg font-bold tracking-wider text-white transition-colors group-hover:text-neutral-300">
+                Dhruv D. Patil
               </span>
             </a>
 
@@ -195,17 +199,23 @@ export default function Navbar() {
       {/* Mobile Sticky Top Brand Header */}
       <header className={`md:hidden fixed top-0 left-0 right-0 z-40 backdrop-blur-md py-3.5 px-6 flex items-center justify-between border-b transition-all duration-300 ${
         theme === 'light'
-          ? 'bg-white/80 border-white/10 shadow-sm'
+          ? 'bg-white/80 border-black/5 shadow-sm'
           : 'bg-[#050505ef] border-white/5 shadow-2xl'
       }`}>
         <a 
           href="#home"
           onClick={(e) => handleLinkClick(e, '#home')}
-          className="flex items-center"
+          className="flex items-center gap-2 group"
           id="nav-logo-mobile"
         >
-          <span className="font-display text-xl font-bold tracking-wider text-white">
-            DDP
+          {/* Mobile Premium Logo (black circle with white triangle) */}
+          <div className="flex items-center justify-center h-7 w-7 rounded-full bg-black border border-white/20 shadow-md group-active:scale-95">
+            <span className="text-[9px] text-white select-none leading-none translate-y-[-0.5px]">▲</span>
+          </div>
+          <span className={`font-display text-base font-bold tracking-wider transition-colors ${
+            theme === 'light' ? 'text-neutral-900 hover:text-neutral-700' : 'text-white hover:text-neutral-300'
+          }`}>
+            Dhruv D. Patil
           </span>
         </a>
 
